@@ -328,5 +328,17 @@ biodiversity_importance = "maintaining biodiversity"
 
 print(f"{sfm_concept} is crucial for {biodiversity_importance}")
 
-"""# `Data Structures.`"""
+----
 
+# sick day log
+
+symptoms = ["Headache", "Body Pain", "Fatigue", "High Fever", "Chills"]
+print(f"Current status: {symptoms}")
+
+print()
+
+for sickness in symptoms:
+    print(f"Fighting {sickness}... Cleared!")
+
+print()
+print("System recovering... Ready for tomorrow.")
