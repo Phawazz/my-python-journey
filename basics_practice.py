@@ -342,3 +342,23 @@ for sickness in symptoms:
 
 print()
 print("System recovering... Ready for tomorrow.")
+
+# busy day log
+
+role = "Local Organizing Committee (LOC)"
+status = "Exhausted but fulfilled"
+
+todays_tasks = ["Conveying instruments & participants from their hostel down to the venue", "Distribution of item7", "Venue Setup", "Delegate Registration", "Assistance with presentation by the speakers"]
+
+print(f"Role: member of the {role}")
+print(f"Current Status: {status}")
+
+print()
+print("-" * 30)
+
+for task in todays_tasks:
+  print(f"Checking task: {task}... DONE ✅")
+
+print("-" * 30)
+print()
+print("Closing out day 1 of the symposium. streak kept alive!")
