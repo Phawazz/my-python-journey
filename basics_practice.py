@@ -362,3 +362,20 @@ for task in todays_tasks:
 print("-" * 30)
 print()
 print("Closing out day 1 of the symposium. streak kept alive!")
+
+# Data Sorter Challenge
+
+even_box = []
+odd_box = []
+
+even_sum = 0
+
+for i in range (1, 51):
+  if i % 2 == 0:
+    even_box.append(i)
+    even_sum += i
+  else:
+    odd_box.append(i)
+print(f"Even numbers: {even_box}")
+print(f"Odd numbers: {odd_box}")
+print(f"Sum of evens: {even_sum}")
