@@ -379,3 +379,19 @@ for i in range (1, 51):
 print(f"Even numbers: {even_box}")
 print(f"Odd numbers: {odd_box}")
 print(f"Sum of evens: {even_sum}")
+
+
+# The Quality Control Bot
+
+export_batch = []
+defect_count = 0
+
+for i in range(1, 51):
+  if 20 <= i <= 40:
+    unit_conversion = i/1000
+    export_batch.append(unit_conversion)
+  else:
+    defect_count += 1
+
+print(f"Ready for export: {export_batch}")
+print(f"Total defects found: {defect_count}")
