@@ -395,3 +395,27 @@ for i in range(1, 51):
 
 print(f"Ready for export: {export_batch}")
 print(f"Total defects found: {defect_count}")
+
+# The Triage System
+
+heart_rates = [72, 45, 110, 85, 160, 30, 210, 90, 55, 105]
+
+bradycardic_patients = []
+tachycardic_patients = []
+stable_patients = []
+critical_patients_count = 0
+
+for rate in heart_rates:
+  if 40 < rate < 60:
+    bradycardic_patients.append(rate)
+  elif 100 < rate < 180:
+    tachycardic_patients.append(rate)
+  elif rate < 40 or rate > 180:
+    critical_patients_count += 1
+  else:
+    stable_patients.append(rate)
+
+print(f"Heart rates of bradycardic patients: {bradycardic_patients}")
+print(f"Heart rates of tachycardic patients: {tachycardic_patients}")
+print(f"Heart rates of stable patients: {stable_patients}")
+print(f"Number of patients with life-threatening arrythmias: {critical_patients_count}")
