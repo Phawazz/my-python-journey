@@ -419,3 +419,42 @@ print(f"Heart rates of bradycardic patients: {bradycardic_patients}")
 print(f"Heart rates of tachycardic patients: {tachycardic_patients}")
 print(f"Heart rates of stable patients: {stable_patients}")
 print(f"Number of patients with life-threatening arrythmias: {critical_patients_count}")
+
+# assess_patient()
+
+def assess_patient(rate):
+  if 40 < rate < 60:
+    return "Bradycardia"
+  elif 100 < rate < 180:
+    return "Tachycardia"
+  elif rate < 40 or rate > 180:
+    return "CRITICAL"
+  else:
+    return "stable"
+
+heart_rates = [72, 45, 110, 85, 160, 30, 210, 90, 55, 105]
+
+brady_list = []
+tachy_list = []
+stable_list = []
+critical_count = 0
+
+for hr in heart_rates:
+    
+    # CALL THE DOCTOR
+    diagnosis = assess_patient(hr)
+    
+    # ACT ON THE DIAGNOSIS
+    if diagnosis == "CRITICAL":
+        print(f"ALARM! Patient with HR {hr} is CRITICAL!")
+        critical_count += 1
+    elif diagnosis == "Bradycardia":
+        brady_list.append(hr)
+    elif diagnosis == "Tachycardia":
+        tachy_list.append(hr)
+    else:
+        stable_list.append(hr)
+
+print("-" * 30)
+print(f"Stable Patients: {stable_list}")
+print(f"Critical Count: {critical_count}")
