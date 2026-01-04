@@ -328,7 +328,7 @@ biodiversity_importance = "maintaining biodiversity"
 
 print(f"{sfm_concept} is crucial for {biodiversity_importance}")
 
-----
+# ----
 
 # sick day log
 
@@ -458,3 +458,25 @@ for hr in heart_rates:
 print("-" * 30)
 print(f"Stable Patients: {stable_list}")
 print(f"Critical Count: {critical_count}")
+
+# Binary Search - Leetcode Challenge
+def search(items, target):
+  start = 0 
+  end = len(items) - 1
+  
+  while start <= end:
+    mid = (start + end) // 2
+    
+    if target == items[mid]:
+        return mid
+    elif target < items[mid]:
+      end = mid - 1
+    else:
+      start = mid + 1
+      
+  return -1
+
+        
+items = [23, 34, 43, 59, 67, 93, 102]
+target = 43
+print(search(items, target))
