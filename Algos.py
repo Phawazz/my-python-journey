@@ -1,5 +1,5 @@
 x = [12, 23, 34, 45, 56, 67, 78, 89, 90, 101, 123]
-target = 512
+target = 34
 
 # Recursive Implementation of Binary Search Algorithm
 def binary_search_recur(items, target):
