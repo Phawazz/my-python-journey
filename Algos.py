@@ -1,9 +1,8 @@
 x = [12, 23, 34, 45, 56, 67, 78, 89, 90, 101, 123]
-target = 23
+target = 512
 
 # Recursive Implementation of Binary Search Algorithm
 def binary_search_recur(items, target):
-    
     mid = len(items) // 2
     
     if len(items) == 1:
@@ -15,14 +14,12 @@ def binary_search_recur(items, target):
     else:
         if items[mid] < target:
             callback_response = binary_search_recur(items[mid:], target)
-            int(callback_response)
             return mid + callback_response if callback_response is not False else False
         
         else:
-            binary_search_recur(items[:mid], target)
+            return binary_search_recur(items[:mid], target)
             
-    return False
-            
+    return -1
 
 print(binary_search_recur(x, target))
 
@@ -32,7 +29,7 @@ def binary_search_iter(items, target):
     start = 0
     end = len(items) - 1
     
-    while start < end:
+    while start <= end:
         mid = (start + end) // 2
         
         if items[mid] == target:
@@ -44,10 +41,9 @@ def binary_search_iter(items, target):
             else:
                 end = mid - 1
                 
-    return False 
+    return -1 
 
 print(binary_search_iter(x, target))
-# Worried about the little bugs disturbing this algo but I gotta proceed.
 
 # SORTING ALGORITHMS.
 
@@ -60,6 +56,7 @@ def standard_bubble_sort(items):
             if items[j] > items[j+1]:
                 items[j + 1], items[j] = items[j], items[j + 1]
                 
+                                
 # Modified Bubble Sort Algorithm
 def mod_bubble_sort(items):
     
