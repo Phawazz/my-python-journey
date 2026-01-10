@@ -29,7 +29,7 @@ y = np.array([45, 50, 61, 78])
 #Hyperparameters: Initial targets
 m = 0
 c = 0
-learning_rate = 0.0001
+learning_rate = 0.000001
 epochs = 1000
 
 n = len(x)
