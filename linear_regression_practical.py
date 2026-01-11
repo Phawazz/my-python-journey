@@ -71,3 +71,29 @@ plt.xlabel("Traffic Volume")
 plt.ylabel("Pollution Levels")
 plt.title("Traffic Volume vs Pollution Levels")
 plt.show()
+
+# Calculating the pearson's correlation coefficient using scipy
+import pandas as pd
+from scipy.stats import pearsonr
+
+data = {
+    "student_id": range(1, 11),
+    "study_hours": [2,3,4,5,6,7,8,9,10,11],
+    "sleep_hours": [5,6,6,7,7,8,8,9,9,9],
+    "screen_time": [8,7,6,5,4,3,2,2,1,1],
+    "attendance": [60,65,70,75,80,85,90,92,95,97],
+    "exam_score": [55,58,62,68,72,78,82,88,92,95]
+}
+
+dataset = pd.DataFrame(data)
+
+def get_correlation(df, col1, col2):
+    x = df[col1]
+    y = df[col2]
+    r, p_value = pearsonr(x, y)
+    
+    return r
+
+# Calling the function...
+correlation = get_correlation(dataset, "study_hours", "exam_score")
+print(f"Pearson correlation: {correlation:.3f}")
