@@ -88,10 +88,18 @@ data = {
 dataset = pd.DataFrame(data)
 
 def get_correlation(df, col1, col2):
-    x = df[col1]
-    y = df[col2]
-    r, p_value = pearsonr(x, y)
+    """"
+    Returns the pearson correlation coefficient between two numeric columns
     
+    Parameters:
+        df (pd.Daaframe): Input dataframe
+        col1 (str): First column name
+        col2 (str): Second column name
+        
+    Returns:
+        float: pearson correlation coefficient
+    """
+    r, _ = pearsonr(df[col1], df[col2])
     return r
 
 # Calling the function...
