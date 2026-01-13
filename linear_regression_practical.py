@@ -105,3 +105,26 @@ def get_correlation(df, col1, col2):
 # Calling the function...
 correlation = get_correlation(dataset, "study_hours", "exam_score")
 print(f"Pearson correlation: {correlation:.3f}")
+
+# Histogram of Residuals for traffic vs pollution
+import matplotlib.pyplot as plt
+
+residuals = pollution_levels - predicted_pol_levels
+
+plt.figure(figsize=(10, 6))
+plt.hist(residuals, bins=20, edgecolor='black')
+plt.title('Distribution of residuals')
+plt.xlabel('Residuals')
+plt.ylabel('Frequency')
+plt.show()
+# Histogram of residuals turned out not to be normally distributed, meaning 'Normality', one of the assumptions for linear regression is absent in the data
+
+
+# Scatter plot of residuals vs predicted values
+plt.figure(figsize=(10, 6))
+plt.scatter(predicted_pol_levels, residuals, edgecolors='black')
+plt.title('Residuals vs Predicted values')
+plt.xlabel('Predicted pollution levels')
+plt.ylabel('Residuals')
+plt.axhline(y=0, color='r', linestyle='--')
+plt.show()
