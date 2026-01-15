@@ -1,4 +1,5 @@
-# Class moved to a different file simply because they take space. It will be imported into the file being worked on.
+# All classes moved here in order to get things organized.
+# # They will be imported into the file being worked on.
 
 class  Car:
     def __init__(self, model, year, color, for_sale): # dunder method (double underscore)
@@ -28,8 +29,7 @@ class Student:
         Student.num_students += 1
         
         
-        
-class Animal:
+class Animal: # Parent class for Dog, Cat, and Mouse
     def __init__(self, name):
         self.name = name
         self.is_alive = True
@@ -42,7 +42,7 @@ class Animal:
         
         
         
-class Dog(Animal):
+class Dog(Animal): 
     def speak(self):
         print("WOOF!")
 
@@ -82,3 +82,42 @@ class Hawk(Predator):
 
 class Fish(Prey, Predator): # a typical example of multiple inheritance; the child class (Fish) inheriting from more than one parent
     pass
+
+# Abstract classes in python
+from abc import ABC, abstractmethod
+class Vehicle(ABC):
+    
+    @abstractmethod
+    def go(self):
+        pass
+    
+    @abstractmethod
+    def stop(self):
+        pass
+    
+class Bus(Vehicle):
+    
+    def go (self):
+        print("You drive the bus")
+        
+    def stop(self):
+        print("You stop the bus")
+        
+        
+class Motorcycle(Vehicle):
+    
+    def go(self):
+        print("You ride the motorcycle")
+    
+    def stop(self):
+        print("You stop the motorcycle")
+        
+class Boat(Vehicle):
+    
+    def go(self):
+        print("You sail the boat")
+        
+    def stop(self):
+        print("You anchor the boat")
+    
+    

@@ -6,10 +6,10 @@ car3 = Car("Charger", 2026, "yellow", True)
 
 print(car1) # this returns the memory address only
 
-print(car1.model) # . is the attribute access operator
-print(car1.year)
-print(car1.color)
-print(car1.for_sale)
+print(car2.model) # . is the attribute access operator
+print(car2.year)
+print(car2.color)
+print(car2.for_sale)
 
 car1.drive()
 car1.stop()
@@ -22,6 +22,8 @@ student2 = Student("Patrick", 35)
 student3 = Student("Squidward", 55)
 student4 = Student("Sandy", 27)
 
+print(student1) # returns the memory address only as well
+
 print(f"My graduating class of {Student.class_year} has {Student.num_students} students")
 print(student1.name)
 print(student2.name)
@@ -29,9 +31,9 @@ print(student3.name)
 print(student4.name)
 
 print()
-print(Student.class_year) # it's good practice to access a class variable by the class itself and not any instance from the class.
+print(Student.class_year) # it's good practice to access a class variable by the class itself rather than via any instance from the class.
 
-# Inheritance in python
+# Inheritance in python: multilevel vs multiple.
 from class_file import Animal, Dog, Cat, Mouse
 
 dog = Dog("Scooby")
@@ -45,7 +47,7 @@ mouse.sleep()
 mouse.speak()
 
 # Multiple and multilevel inheritance in python
-from class_file import Prey, Predator, Rabbit, Hawk, Fish
+from class_file import Organism, Prey, Predator, Rabbit, Hawk, Fish
 
 rabbit = Rabbit("Bugs")
 hawk = Hawk("Tony")
@@ -58,6 +60,26 @@ hawk.eat()
 fish.sleep()
 hawk.hunt()
 
-# Abstract classes in python
-class Vehicle:
-    pass
+# # Abstract classes in python
+
+from class_file import Vehicle, Bus, Motorcycle, Boat
+
+vehicle = Vehicle()
+"""
+This returns the error 'Can't instantiate abstract class Vehicle without an implementation for abstract methods 'go', 'stop''
+That simply explains the fact that we can't create objects directly from an abstract class, rather, they have to first be subclassed.
+"""
+
+bus = Bus()
+bus.go()
+bus.stop()
+
+motorcycle = Motorcycle()
+boat = Boat()
+
+boat.go()
+boat.stop()
+
+motorcycle.go()
+motorcycle.stop()
+
