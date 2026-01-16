@@ -64,8 +64,8 @@ hawk.hunt()
 
 from class_file import Vehicle, Bus, Motorcycle, Boat
 
-vehicle = Vehicle()
 """
+vehicle = Vehicle()
 This returns the error 'Can't instantiate abstract class Vehicle without an implementation for abstract methods 'go', 'stop''
 That simply explains the fact that we can't create objects directly from an abstract class, rather, they have to first be subclassed.
 """
@@ -83,3 +83,16 @@ boat.stop()
 motorcycle.go()
 motorcycle.stop()
 
+
+from class_file import Shape, Circle, Square, Triangle
+
+circle = Circle(color="red", is_filled=True, radius=5)
+square = Square(color="blue", is_filled=False, width=6)
+triangle = Triangle(color="yellow", is_filled=True, width=7, height=8)
+
+print(triangle.color)
+print(triangle.is_filled)
+print(f"{triangle.width}cm")
+print(f"{triangle.height}cm")
+
+circle.describe()
