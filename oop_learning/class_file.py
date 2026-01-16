@@ -134,15 +134,51 @@ class Circle(Shape):
         self.radius = radius
         
     def describe(self):
-        print(f"It is a circle with an area of {3.14 * self.radius * self.radius }")
+        print(f"It is a circle with an area of {3.14 * self.radius * self.radius}cm^2") # method overriding
+        super().describe()
         
 class Square(Shape):
     def __init__(self, color, is_filled, width):
         super().__init__(color, is_filled)
         self.width = width
+        
+    def describe(self):
+        print(f"It is a square with an area of {self.width * self.width}cm^2") # method overriding
+        # Method overriding in python is an OOP concept that allows a child class(subclass) to provide a specific implementation of...
+        # ...a method that is already defined in it's parent class(superclass)
+        super().describe()
 
 class Triangle(Shape):
     def __init__(self, color, is_filled, width, height):
         super().__init__(color, is_filled)
         self.width = width
         self.height = height
+        
+    def describe(self): # method overriding
+        print(f"It is a triangle with an area of {self.width * self.height / 2}cm^2") 
+        super().describe()
+        
+# Checking method resolution order (MRO) in python
+class A: pass
+class B: pass
+class C(A, B): pass
+
+print(C.__mro__)
+        
+from abc import ABC, abstractmethod
+class Profession:
+    
+    @abstractmethod
+    def duration(self):
+        pass
+
+class Cardiologist(Profession):
+    pass
+
+class MachineLearningEngineer(Profession):
+    pass
+
+class MResearcher(Profession):
+    pass
+
+professions = [Cardiologist(), MachineLearningEngineer(), MResearcher()]

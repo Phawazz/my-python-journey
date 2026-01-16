@@ -1,4 +1,4 @@
-from class_file import Car
+from oop_learning.class_file import Car
         
 car1 = Car("Mustang", 2024, "red", False)
 car2 = Car("Corvette", 2025, "blue", True)
@@ -16,7 +16,7 @@ car1.stop()
 car2.describe()
 
 # Class variables
-from class_file import Student
+from oop_learning.class_file import Student
 student1 = Student("Spongebob", 30)
 student2 = Student("Patrick", 35)
 student3 = Student("Squidward", 55)
@@ -34,7 +34,7 @@ print()
 print(Student.class_year) # it's good practice to access a class variable by the class itself rather than via any instance from the class.
 
 # Inheritance in python: multilevel vs multiple.
-from class_file import Animal, Dog, Cat, Mouse
+from oop_learning.class_file import Animal, Dog, Cat, Mouse
 
 dog = Dog("Scooby")
 cat = Cat("Garfield")
@@ -47,7 +47,7 @@ mouse.sleep()
 mouse.speak()
 
 # Multiple and multilevel inheritance in python
-from class_file import Organism, Prey, Predator, Rabbit, Hawk, Fish
+from oop_learning.class_file import Organism, Prey, Predator, Rabbit, Hawk, Fish
 
 rabbit = Rabbit("Bugs")
 hawk = Hawk("Tony")
@@ -62,7 +62,7 @@ hawk.hunt()
 
 # # Abstract classes in python
 
-from class_file import Vehicle, Bus, Motorcycle, Boat
+from oop_learning.class_file import Vehicle, Bus, Motorcycle, Boat
 
 """
 vehicle = Vehicle()
@@ -84,7 +84,7 @@ motorcycle.go()
 motorcycle.stop()
 
 
-from class_file import Shape, Circle, Square, Triangle
+from oop_learning.class_file import Shape, Circle, Square, Triangle
 
 circle = Circle(color="red", is_filled=True, radius=5)
 square = Square(color="blue", is_filled=False, width=6)
@@ -95,4 +95,4 @@ print(triangle.is_filled)
 print(f"{triangle.width}cm")
 print(f"{triangle.height}cm")
 
-circle.describe()
+triangle.describe()
