@@ -1,4 +1,4 @@
-from oop_learning.class_file import Car
+from class_file import Car
         
 car1 = Car("Mustang", 2024, "red", False)
 car2 = Car("Corvette", 2025, "blue", True)
@@ -16,7 +16,7 @@ car1.stop()
 car2.describe()
 
 # Class variables
-from oop_learning.class_file import Student
+from class_file import Student
 student1 = Student("Spongebob", 30)
 student2 = Student("Patrick", 35)
 student3 = Student("Squidward", 55)
@@ -34,7 +34,7 @@ print()
 print(Student.class_year) # it's good practice to access a class variable by the class itself rather than via any instance from the class.
 
 # Inheritance in python: multilevel vs multiple.
-from oop_learning.class_file import Animal, Dog, Cat, Mouse
+from class_file import Animal, Dog, Cat, Mouse
 
 dog = Dog("Scooby")
 cat = Cat("Garfield")
@@ -47,7 +47,7 @@ mouse.sleep()
 mouse.speak()
 
 # Multiple and multilevel inheritance in python
-from oop_learning.class_file import Organism, Prey, Predator, Rabbit, Hawk, Fish
+from class_file import Organism, Prey, Predator, Rabbit, Hawk, Fish
 
 rabbit = Rabbit("Bugs")
 hawk = Hawk("Tony")
@@ -62,7 +62,7 @@ hawk.hunt()
 
 # # Abstract classes in python
 
-from oop_learning.class_file import Vehicle, Bus, Motorcycle, Boat
+from class_file import Vehicle, Bus, Motorcycle, Boat
 
 """
 vehicle = Vehicle()
@@ -83,8 +83,8 @@ boat.stop()
 motorcycle.go()
 motorcycle.stop()
 
-
-from oop_learning.class_file import Shape, Circle, Square, Triangle
+# ---
+from class_file import Shape, Circle, Square, Triangle
 
 circle = Circle(color="red", is_filled=True, radius=5)
 square = Square(color="blue", is_filled=False, width=6)
@@ -96,3 +96,21 @@ print(f"{triangle.width}cm")
 print(f"{triangle.height}cm")
 
 triangle.describe()
+
+# ---
+from Shapes import Shape, Circle, Square, Triangle, Pizza
+
+shapes = [Circle(4), Square(5), Triangle(6, 7), Pizza("pepperonni", 15)]
+print(shapes) 
+
+for shape in shapes:
+    print(f"{shape.area()}cm^2")
+    
+# Duck Typing in Python
+from Animals import Animal, Dog, Cat, Car
+
+animals = [Dog(), Cat(), Car()]
+
+for animal in animals:
+    animal.speak()
+    print(animal.alive)

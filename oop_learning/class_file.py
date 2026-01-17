@@ -164,21 +164,3 @@ class B: pass
 class C(A, B): pass
 
 print(C.__mro__)
-        
-from abc import ABC, abstractmethod
-class Profession:
-    
-    @abstractmethod
-    def duration(self):
-        pass
-
-class Cardiologist(Profession):
-    pass
-
-class MachineLearningEngineer(Profession):
-    pass
-
-class MResearcher(Profession):
-    pass
-
-professions = [Cardiologist(), MachineLearningEngineer(), MResearcher()]
