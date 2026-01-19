@@ -1,27 +1,30 @@
-def is_valid(brac): # FUNCTION is_valid is defined to determine whether a parenthesis is valid or not
-    dict = {
-        "]" : "[",
-        ")" : "(",
-        "}" : "{"
-    } # a dictionary was created with the key:value pairs being the closing and opening brackets of the 3 types
+def is_valid(brac): 
+    bracket_map = { "]" : "[", ")" : "(", "}" : "{"}
+        # Mapping closing to opening brackets with a dictionary
     
-    store = [] # an empty list was created
+    store = []
     
-    for i in brac:
-        if (i == '[' or i == '(' or i == '{'):
+    for i in bracket_map:
+    # Check if it's an opening bracket (Value)
+        if i in bracket_map.values():
             store.append(i)
-        # This appends (, [, or { to the empty list created.
-        
-        elif (i == ']' or i == ')' or i == '}'):
+
+        # Check if it's a closing bracket (Key)
+        elif i in bracket_map:
+        # automatically false if closing bracket will be the first item
             if len(store) == 0:
                 return False
+            
             last_i = store.pop()
-            if dict[i] != last_i:
+            
+            # Checking for mismatch
+            if bracket_map[i] != last_i:
                 return False
-        # This block of code will pop out the previous item in the store if it comes across ), ], or } but...
-        # ...will return False if no opening bracket has been pushed into store already, i.e. store is initially empty.
         
-    if (len(store) != 0):
-        return False
-    return True
+    return len(store) == 0
     # After the whole code runs, an empty list indicates a valid parentheses and thereby returns True, otherwise, False is returned.
+    
+test_cases = ["()[]{}", "{[()]}", "(]", "]", "(()"]
+
+for t in test_cases:
+    print(f"Input: {t} \t -> {is_valid(t)}")
