@@ -1,10 +1,10 @@
-def is_valid(brac): 
+def is_valid(brackets): 
     bracket_map = { "]" : "[", ")" : "(", "}" : "{"}
         # Mapping closing to opening brackets with a dictionary
     
     store = []
     
-    for i in brac:
+    for i in brackets:
     # Check if it's an opening bracket (Value)
         if i in bracket_map.values():
             store.append(i)
