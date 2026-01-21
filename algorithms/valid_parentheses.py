@@ -4,7 +4,7 @@ def is_valid(brac):
     
     store = []
     
-    for i in bracket_map:
+    for i in brac:
     # Check if it's an opening bracket (Value)
         if i in bracket_map.values():
             store.append(i)
